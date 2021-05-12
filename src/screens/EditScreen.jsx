@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-export const EditScreen = () => {
+export const EditScreen = ({ navigation }) => {
   return (
     <View>
-      <Text>Edit Screen</Text>
+      <Text>Edit Screen - {navigation.getParam('id')}</Text>
     </View>
   );
 };
 
-const styles = StyleSheet({});
+const styles = StyleSheet.create({});
