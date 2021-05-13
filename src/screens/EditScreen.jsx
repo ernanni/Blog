@@ -4,7 +4,8 @@ import { Form } from '../components';
 import { Context } from '../context/BlogContext';
 
 export const EditScreen = ({ navigation }) => {
-  const { state } = useContext(Context);
+  const { state, editBlogPost } = useContext(Context);
+
   const id = navigation.getParam('id');
   const blogPost = state.find((blogPost) => blogPost.id === id);
 
@@ -17,7 +18,9 @@ export const EditScreen = ({ navigation }) => {
       setTitle={setTitle}
       content={content}
       setContent={setContent}
-      onButtonPress={() => console.log('pressed')}
+      onButtonPress={() =>
+        editBlogPost(id, title, content, () => navigation.pop())
+      }
     />
   );
 };

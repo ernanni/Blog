@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { EvilIcons } from '@expo/vector-icons';
 
 import { Context } from '../context/BlogContext';
+import { Description, Title } from '../components';
 
 export const ShowScreen = ({ navigation }) => {
   const { state } = useContext(Context);
@@ -13,9 +14,9 @@ export const ShowScreen = ({ navigation }) => {
   );
 
   return (
-    <View>
-      <Text>{blogPost.title}</Text>
-      <Text>{blogPost.content}</Text>
+    <View style={styles.viewWrapper}>
+      <Title value={blogPost.title} />
+      <Description value={blogPost.content} />
     </View>
   );
 };
@@ -34,4 +35,8 @@ ShowScreen.navigationOptions = ({ navigation }) => {
   };
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  viewWrapper: {
+    padding: 16,
+  },
+});

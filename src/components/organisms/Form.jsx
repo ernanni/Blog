@@ -21,6 +21,11 @@ export const Form = ({
   );
 };
 
+Form.defaultProps = {
+  title: '',
+  description: '',
+};
+
 const viewStyled = {
   padding: 16,
 };
